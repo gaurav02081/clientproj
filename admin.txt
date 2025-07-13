@@ -1,0 +1,245 @@
+# Saiyankraft Admin Panel Documentation
+
+## Overview
+The Saiyankraft admin panel is a comprehensive management system for the anime merchandise store, providing full control over products, orders, users, and categories.
+
+## Access
+- **URL**: `/admin` (requires admin role)
+- **Authentication**: JWT token required
+- **Role Required**: Admin
+
+---
+
+## 🏠 Dashboard
+
+### Features
+- **Real-time Analytics**: Revenue, orders, products, and customer metrics
+- **Recent Orders**: Latest 5 orders with status tracking
+- **Top Products**: Highest-rated products with ratings
+- **Category Distribution**: Visual progress bars showing product distribution
+- **Interactive Charts**: Animated statistics with trend indicators
+
+### Key Metrics
+- Total Revenue with trend indicators
+- Order statistics by status (pending, processing, shipped, delivered)
+- Product counts and ratings
+- Customer metrics
+- Category distribution charts
+
+---
+
+## 📦 Product Management
+
+### Features
+- **Bulk Operations**: Select multiple products for batch operations
+- **Advanced Filtering**: Search by name/anime, filter by category and status
+- **Enhanced Product Cards**: Featured badges, category display, stock status
+- **Quick Actions**: View, edit, and delete with confirmation dialogs
+- **Real-time Updates**: Immediate feedback on all operations
+
+### Product Operations
+1. **Add Product**: Click "Add Product" button
+2. **Edit Product**: Click edit icon on any product
+3. **Delete Product**: Click delete icon (with confirmation)
+4. **Bulk Delete**: Select multiple products and click "Delete Selected"
+5. **View Product**: Click eye icon to view product details
+
+### Filters
+- **Search**: Search by product name or anime
+- **Category Filter**: Filter by product category
+- **Status Filter**: Filter by stock status (in-stock, out-of-stock, featured)
+
+### Product Fields
+- Name, Anime, Description
+- Price, Original Price, Discount
+- Stock Quantity
+- Categories (multiple selection)
+- Images (multiple URLs)
+- Features, Material, Dimensions, Weight
+- Featured status
+- SKU
+
+---
+
+## 📋 Order Management
+
+### Features
+- **Order Statistics**: Total orders, pending, processing, shipped, delivered counts
+- **Status Management**: Real-time status updates with dropdown controls
+- **Order Details Modal**: Complete order information with customer and item details
+- **Advanced Filtering**: Search by order ID, customer, status, and date
+- **Revenue Tracking**: Total revenue calculation and display
+
+### Order Operations
+1. **View Order Details**: Click eye icon to view complete order information
+2. **Update Status**: Use dropdown to change order status
+   - Pending → Processing → Shipped → Delivered
+   - Can also cancel orders
+
+### Order Statuses
+- **Pending**: New order awaiting processing
+- **Processing**: Order being prepared
+- **Shipped**: Order has been shipped
+- **Delivered**: Order has been delivered
+- **Cancelled**: Order has been cancelled
+
+### Order Information Displayed
+- Order ID and date
+- Customer information (name, email)
+- Order items with quantities and prices
+- Total amount
+- Current status
+
+---
+
+## 👥 User Management
+
+### Features
+- **User Statistics**: Total, active, inactive, admin, moderator, regular user counts
+- **Role Management**: Easy role switching between user, moderator, and admin
+- **Status Control**: Activate/deactivate users with toggle switches
+- **User Details Modal**: Complete user information and management
+- **Advanced Filtering**: Search by name/email, filter by role and status
+
+### User Operations
+1. **View User Details**: Click eye icon to view complete user information
+2. **Change Role**: Use dropdown to change user role
+3. **Toggle Status**: Use switch to activate/deactivate users
+
+### User Roles
+- **User**: Regular customer account
+- **Moderator**: Can manage products and orders
+- **Admin**: Full access to all features
+
+### User Status
+- **Active**: User can log in and make purchases
+- **Inactive**: User account is disabled
+
+### User Information Displayed
+- User ID and registration date
+- Name and email
+- Current role and status
+- Account creation and last update dates
+
+---
+
+## 🏷️ Category Management
+
+### Features
+- **Dynamic Categories**: Full CRUD operations for product categories
+- **Flexible Product Assignment**: Products can be assigned to multiple categories
+- **Category Statistics**: Visual distribution of products across categories
+
+### Category Operations
+1. **Add Category**: Create new product categories
+2. **Edit Category**: Modify existing category details
+3. **Delete Category**: Remove categories (with confirmation)
+4. **View Products**: See all products in each category
+
+### Category Fields
+- Name (e.g., "Figures", "Posters", "Clothing")
+- Slug (URL-friendly version)
+- Description
+- Icon (optional)
+
+---
+
+## 🔧 Technical Features
+
+### Real-time Updates
+- All data is fetched live from the backend
+- Immediate feedback on all operations
+- Automatic refresh after successful operations
+
+### Error Handling
+- Comprehensive error messages
+- Loading states for all operations
+- Toast notifications for success/error feedback
+
+### Responsive Design
+- Mobile-friendly interface
+- Responsive tables and forms
+- Touch-friendly controls
+
+### Security
+- Role-based access control
+- JWT authentication
+- Admin-only routes protection
+
+---
+
+## 📊 API Endpoints
+
+### Products
+- `GET /api/products` - Get all products
+- `POST /api/products` - Create new product
+- `PUT /api/products/:id` - Update product
+- `DELETE /api/products/:id` - Delete product
+
+### Orders
+- `GET /api/orders` - Get all orders
+- `PUT /api/orders/:id/status` - Update order status
+
+### Users
+- `GET /api/users` - Get all users
+- `PUT /api/users/:id/role` - Update user role
+- `PUT /api/users/:id/status` - Update user status
+
+### Categories
+- `GET /api/categories` - Get all categories
+- `POST /api/categories` - Create new category
+- `PUT /api/categories/:id` - Update category
+- `DELETE /api/categories/:id` - Delete category
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+1. Admin account with proper role
+2. Valid JWT token
+3. Access to the admin panel
+
+### First Steps
+1. **Login** with admin credentials
+2. **Navigate** to `/admin` dashboard
+3. **Review** dashboard analytics
+4. **Explore** each section (Products, Orders, Users, Categories)
+
+### Best Practices
+1. **Regular Monitoring**: Check dashboard daily for new orders
+2. **Status Updates**: Update order statuses promptly
+3. **Product Management**: Keep product information current
+4. **User Management**: Monitor user accounts for suspicious activity
+5. **Category Organization**: Maintain well-organized product categories
+
+---
+
+## 🆘 Troubleshooting
+
+### Common Issues
+1. **Permission Denied**: Ensure user has admin role
+2. **Data Not Loading**: Check network connection and API endpoints
+3. **Status Updates Failing**: Verify backend server is running
+4. **Bulk Operations**: Ensure proper selection before bulk actions
+
+### Support
+- Check browser console for error messages
+- Verify API endpoints are accessible
+- Ensure database connection is stable
+- Contact system administrator for role issues
+
+---
+
+## 📈 Performance Tips
+
+1. **Use Filters**: Utilize search and filter functions to find specific items quickly
+2. **Bulk Operations**: Use bulk actions for multiple items instead of individual operations
+3. **Regular Updates**: Keep product and order information current
+4. **Monitor Analytics**: Use dashboard metrics to track store performance
+
+---
+
+*Last Updated: July 2024*
+*Version: 1.0*
+*Saiyankraft Admin Panel* 
